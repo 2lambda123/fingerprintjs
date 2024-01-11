@@ -9,9 +9,8 @@ The library supports all the popular installation methods:
 ```html
 <script>
   // Initialize the agent at application startup.
-  // You can also use https://openfpcdn.io/fingerprintjs/v4/esm.min.js
-  const fpPromise = import('https://openfpcdn.io/fingerprintjs/v4')
-    .then(FingerprintJS => FingerprintJS.load())
+  const FingerprintJS = (await import('https://openfpcdn.io/fingerprintjs/v4')).default
+  const fp = await FingerprintJS.load()
 
   // Get the visitor identifier when you need it.
   fpPromise
