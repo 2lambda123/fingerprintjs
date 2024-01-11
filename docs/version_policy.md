@@ -1,6 +1,6 @@
 # Version policy
 
-The documented JS API follows [Semantic Versioning](https://semver.org).
+The documented JS API follows [Semantic Versioning](https://semver.org). It also provides guidelines for handling visitor identifier compatibility and updating without losing identifiers.
 Use undocumented features at your own risk.
 
 ## Visitor identifier compatibility
@@ -50,11 +50,8 @@ Promise.all([
   newFpPromise.then(fp => fp.get()),
 ]).then(([oldResult, newResult]) => {
   // Handle both the results. For example, send to your server.
-  return fetch(
-    '/visitor'
-      + `?fingerprintV4_0=${encodeURIComponent(oldResult.visitorId)}`
-      + `&fingerprintV4_1=${encodeURIComponent(newResult.visitorId)}`
-  )
+  return fetch('/visitor' +
+`?fingerprintV4_0=${encodeURIComponent(oldResult.visitorId)}&fingerprintV4_NEW_VERSION=${encodeURIComponent(newResult.visitorId)}`)
 })
 ```
 
