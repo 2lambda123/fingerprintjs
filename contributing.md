@@ -2,7 +2,7 @@
 
 ## Working with the code
 
-Make sure you have [Yarn](https://yarnpkg.com) installed.
+Make sure you have [Yarn](https://yarnpkg.com) and [Node.js](https://nodejs.org) installed.
 
 ### Development playground
 
@@ -15,7 +15,7 @@ yarn playground:start # Add '--port 8765' to change the server port
 ```
 
 Then open http://localhost:8080 in a browser.
-It's reloaded every time the source code is changed.
+It's reloaded every time the source code is changed. The code of the playground itself is located in the [playground](playground) directory, and to build the playground distribution code, run:
 The code of the playground itself is located in the [playground](playground) directory.
 Use a tool like [Ngrok](https://ngrok.com) to open the playground on a remote device.
 
@@ -23,7 +23,8 @@ To build the playground distribution code (e.g. to upload to a static server), r
 
 ```bash
 yarn playground:build
-```
+
+The result will appear at `playground/dist`.
 
 The result will appear at `playground/dist`.
 
